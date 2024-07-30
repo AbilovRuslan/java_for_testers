@@ -9,9 +9,5 @@ public class TriangleTest {
         Assertions. assertEquals(12, result);
     }
 
-<<<<<<< HEAD
 
-=======
-   
->>>>>>> origin/main
 }
