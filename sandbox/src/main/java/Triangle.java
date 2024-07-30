@@ -25,4 +25,10 @@ public class Triangle {
         return Math.sqrt(s * (s - a) * (s - b) * (s - c)); // Герон
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+
+
+>>>>>>> origin/main
