@@ -1,14 +1,12 @@
-public class Triangle1 {
+public class Triangle1 { public static void main(String[] args) {
 
-    public static void main(String[] args) {
+    printTrianglePerimetr(3.0, 5.0, 6.0);
+    TriangleArea(5,5,8);
+    printTrianglePerimetr(4,7,8);
+    TriangleArea(4,6,9);
+}
 
-        printTrianglePerimetr(3.0, 5.0, 6.0);
-        TriangleArea(5,5,8);
-        printTrianglePerimetr(4,7,8);
-        TriangleArea(4,6,9);
-    }
-
-    private static void TriangleArea(double a, double b, double c) {
+    public static void TriangleArea(double a, double b, double c) {
         System.out.println("Площадь треугольника равна =" + printTriangleArea(a,b,c));
     }
     public static double printTriangleArea(double a, double b, double c) {
@@ -21,7 +19,9 @@ public class Triangle1 {
         return a;
     }
 
-    private static double TrianglePerimetr(double a, double b, double c) {
+    public static double TrianglePerimetr(double a, double b, double c) {
         return a + b + c;
     }
+
+
 }
