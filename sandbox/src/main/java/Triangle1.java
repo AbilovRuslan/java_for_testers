@@ -1,27 +1,25 @@
-public class Triangle1 { public static void main(String[] args) {
+public record Triangle1(double a, double b, double c) {
 
-    printTrianglePerimetr(3.0, 5.0, 6.0);
-    TriangleArea(5,5,8);
-    printTrianglePerimetr(4,7,8);
-    TriangleArea(4,6,9);
-}
 
-    public static void TriangleArea(double a, double b, double c) {
-        System.out.println("Площадь треугольника равна =" + printTriangleArea(a,b,c));
-    }
-    public static double printTriangleArea(double a, double b, double c) {
-        double s = (a + b + c) / 2.0;
-        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    public static void main(String[] args) {
+        Triangle1 triangle1 = new Triangle1(5.0, 5.0, 8.0);
+        triangle1.calculatePerimeter();
+        triangle1.calculateArea();
+
     }
 
-    public static double printTrianglePerimetr(double a, double b, double c) {
-        System.out.println("Периметр треугольника равен =" + TrianglePerimetr(a, b, c));
-        return a;
+    // вычисления периметра
+    public double calculatePerimeter() {
+        double perimeter = a + b + c; // Периметр
+        System.out.println("Периметр треугольника: " + perimeter);
+        return perimeter;
     }
 
-    public static double TrianglePerimetr(double a, double b, double c) {
-        return a + b + c;
+    //площадь по формуле Герона
+    public double calculateArea() {
+        double s = (a + b + c) / 2.0; // Полупериметр
+        double area = Math.sqrt(s * (s - a) * (s - b) * (s - c)); // Площадь
+        System.out.println("Площадь треугольника: " + area);
+        return area;
     }
-
-
 }
