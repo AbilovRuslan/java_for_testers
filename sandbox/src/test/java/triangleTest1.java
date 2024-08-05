@@ -18,6 +18,13 @@ public class triangleTest1 {
         double result = triangle.calculateArea();
         assertEquals(12.0, result, "Площадь треугольника должна быть 12.0");
     }
+    @Test
+    void testEquals_UnequalTriangles() {
+        var triangle1 = new Triangle1(3, 4, 5);
+        var triangle2 = new Triangle1(5, 4, 3);
+        Assertions.assertTrue(triangle1.equals(triangle2), "Two triangles with the same sides in different orders should be equal.");
+    }
+
 
 
     @Test
