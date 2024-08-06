@@ -7,6 +7,10 @@ public record Triangle1(double a, double b, double c)  {
         if (a < 0 || b < 0 || c < 0) {
             throw new IllegalArgumentException("The length of a triangle's side cannot be negative or zero.");
         }
+        // Условие неравенства треугольника
+        if (a + b <= c || a + c <= b || b + c <= a) {
+            throw new IllegalArgumentException("The sum of any two sides must be greater than the third side.");
+        }
     }
 
     @Override

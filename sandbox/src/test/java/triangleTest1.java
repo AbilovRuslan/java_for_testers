@@ -25,6 +25,30 @@ public class triangleTest1 {
         Assertions.assertTrue(triangle1.equals(triangle2), "Two triangles with the same sides in different orders should be equal.");
     }
 
+    @Test
+    public void testTriangleInequality() {
+        // Ошибочные параметры
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Triangle1(1.0, 2.0, 3.0);
+        });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Triangle1(1.0, 3.0, 2.0);
+        });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Triangle1(3.0, 2.0, 1.0);
+        });
+    }
+
+    @Test
+    public void testValidTriangleCreation() {
+        //  корректный треугольник
+        assertDoesNotThrow(() -> {
+            new Triangle1(5.0, 5.0, 8.0);
+        });
+    }
+
 
 
     @Test
