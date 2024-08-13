@@ -18,9 +18,4 @@ public record GroupData(String name, String header, String footer) {
         return new GroupData(this.name, this.header, footer);
     }
 
-
-
-
-
-
 }
