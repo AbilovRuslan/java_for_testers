@@ -3,19 +3,15 @@ package tests;
 import model.GroupData;
 import org.junit.jupiter.api.Test;
 
-public class GroupCreationsTests extends TestBase {
-
-
+public class GroupCreationTests extends TestBase {
     @Test
     public void canCreateGroup() {
         app.groups().createGroup(new GroupData("group name", "group header", "group footer"));
-
     }
 
     @Test
-    public void canCreateGroupEmptyName() {
+    public void canCreateGroupWithEmptyName() {
         app.groups().createGroup(new GroupData());
-
     }
 
     @Test
