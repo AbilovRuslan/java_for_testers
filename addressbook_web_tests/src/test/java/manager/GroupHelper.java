@@ -10,7 +10,7 @@ public class GroupHelper extends HelperBase {
     }
 
     public void openGroupsPage() {
-        if (!manager.isElementPresent(By.name("new"))) {
+        if (!isElementPresent(By.name("new"))) {
             click(By.linkText("groups"));
         }
     }
@@ -71,7 +71,7 @@ public class GroupHelper extends HelperBase {
 
     public boolean isGroupPresent() {
         openGroupsPage();
-        return manager.isElementPresent(By.name("selected[]"));
+        return isElementPresent(By.name("selected[]"));
     }
 
     private void returnToGroupsPage() {

@@ -1,10 +1,9 @@
 package manager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 public class ApplicationManager {
     protected WebDriver driver;
@@ -12,6 +11,8 @@ public class ApplicationManager {
     private LoginHelper session;
 
     private GroupHelper groups;
+
+    private ContactHelper contacts;
 
     public void init(String browser) {
         if (driver == null) {
@@ -42,12 +43,10 @@ public class ApplicationManager {
         return groups;
     }
 
-    protected boolean isElementPresent(By locator) {
-        try {
-            driver.findElement(locator);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
+    public ContactHelper contacts() {
+        if (contacts == null) {
+            contacts = new ContactHelper(this);
         }
+        return contacts;
     }
 }
