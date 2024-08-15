@@ -20,6 +20,8 @@ public class ApplicationManager {
                 driver = new ChromeDriver();
             } else if ("firefox".equals(browser)) {
                 driver = new FirefoxDriver();
+            } else if ("safari".equals(browser)) {
+                driver = new SafariDriver();
             } else {
                 throw new IllegalArgumentException(String.format("Unknown Browser %s", browser));
             }
