@@ -3,6 +3,9 @@ package manager;
 import model.ContactData;
 import org.openqa.selenium.By;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ContactHelper extends HelperBase {
     public ContactHelper(ApplicationManager manager) {
         super(manager);
@@ -51,4 +54,14 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home"));
         timeout(1);
     }
+
+    public List<ContactData> getAllContacts() {
+        int contacts = 0;
+        return new ArrayList<>(contacts);
+    }
+
+    public int getCount() {
+        openHomePage();
+       return manager.driver.findElements(By.linkText("add new")).size();
+        }
 }
