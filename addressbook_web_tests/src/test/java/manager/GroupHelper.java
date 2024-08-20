@@ -68,13 +68,14 @@ public class GroupHelper extends HelperBase {
         type(By.name("group_header"), group.header());
         type(By.name("group_footer"), group.footer());
     }
-
-    public boolean isGroupPresent() {
-        openGroupsPage();
-        return isElementPresent(By.name("selected[]"));
-    }
+    
 
     private void returnToGroupsPage() {
         click(By.linkText("group page"));
+    }
+
+    public int getCount() {
+        openGroupsPage();
+        return manager.driver.findElements(By.name("selected[]")).size();
     }
 }
