@@ -12,16 +12,19 @@ public class ContactCreationTests extends TestBase {
 
     public static List<ContactData> contactProvider() {
         var result = new ArrayList<ContactData>(List.of(
-                new ContactData("name", "", "")));
+                new ContactData("", "name", "", "")));
         for (var name : List.of("", "name")) {
             for (var firstName : List.of("", "firstName")) {
                 for (var address : List.of("", "address")) {
-                    result.add(new ContactData(name, firstName, address));
+                    result.add(new ContactData().withFirstName(firstName).withLastName(name).withAddress(address));
                 }
             }
         }
         for (int i = 0; i < 5; i++) {
-            result.add(new ContactData(randomString(i * 10), randomString(i * 10), randomString(i * 10)));
+            result.add(new ContactData()
+                    .withFirstName(randomString(i * 10))
+                    .withLastName(randomString(i * 10))
+                    .withAddress(randomString(i * 10)));
         }
         return result;
     }
