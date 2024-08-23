@@ -33,23 +33,27 @@ public class ContactCreationTests extends TestBase {
         return result;
     }
 
-
-
     @ParameterizedTest
     @MethodSource("contactProvider")
     public void canCreateMultipleContacts(ContactData contact) {
         var oldContacts = app.contacts().getList();
         app.contacts().createContact(contact);
-        var expectList = new ArrayList<>(oldContacts);
         var newContact = app.contacts().getList();
+
+//  компаратор для сортировки по (id) в порядке возрастания
         Comparator<ContactData> compareById = (o1, o2) -> {
+            //Сравниваем значения идентификаторов двух объектов. строки в числа для  сравнения
             return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
         };
-        newContact.sort(compareById);
-        expectList.add(contact.withId(newContact.get(newContact.size() - 1).id())); 
-        expectList.sort(compareById);
+        newContact.sort(compareById); //Сортируем список newContact по id в Новом списке
+        var expectedList = new ArrayList<>(oldContacts); // Создаем ожидаемый список, основанный на сохраненном старом списке контактов
+        expectedList.add(contact.withId(newContact.get(newContact.size() - 1).id())
+                .withLastName("")
+                .withFirstName("")
+                .withAddress("")); //Добавляем новый контакт в ожидаемый список и устанавливаем его ID- как ID последнего контакт из нового списка
+        expectedList.sort(compareById);// // Сортируем ожидаемый список по идентификаторам, чтобы он соответствовал порядку нового списка
+        Assertions.assertEquals(newContact, expectedList); //Сравниваем фактический и ожидаемый списки на совпадение. И он не совпадает)))
 
-        Assertions.assertEquals(newContact, expectList);
     }
 
     public static List<ContactData> negativeContactProvider() {

@@ -1,4 +1,5 @@
 package manager;
+
 import model.ContactData;
 import org.openqa.selenium.By;
 
@@ -19,12 +20,12 @@ public class ContactHelper extends HelperBase {
     }
 
     public void createContact(ContactData contact) {
+        openContactPage();
         initContactCreation();
         fillContactForm(contact);
         submitContactCreation();
         returnToContactPage();
     }
-
 
 
     private void fillContactForm(ContactData contactData) {
@@ -85,8 +86,8 @@ public class ContactHelper extends HelperBase {
             var lastName = entry.findElement(By.cssSelector("td:nth-child(2)")).getText();
 
             contacts.add(new ContactData()
-                            .withId(id)
-                            .withLastName(lastName));
+                    .withId(id)
+                    .withLastName(lastName));
 
 
         }
