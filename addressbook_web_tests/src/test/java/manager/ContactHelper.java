@@ -19,6 +19,8 @@ public class ContactHelper extends HelperBase {
         returnToContactPage();
     }
 
+
+
     private void fillContactForm(ContactData contactData) {
         type(By.name("firstname"), contactData.firstName());
         type(By.name("lastname"), contactData.lastName());
@@ -83,6 +85,14 @@ public class ContactHelper extends HelperBase {
 
         }
         return contacts;
+    }
+    private static int getLastDigit(String number) {
+        String digits = number.replaceAll("[^0-9]", "");
+        if (!digits.isEmpty()) {
+            char lastChar = digits.charAt(digits.length() - 1);
+            return Character.getNumericValue(lastChar);
+        }
+        return -1;
     }
 
 }
