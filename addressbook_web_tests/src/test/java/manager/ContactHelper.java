@@ -1,6 +1,7 @@
 package manager;
 import model.ContactData;
 import org.openqa.selenium.By;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,12 +68,18 @@ public class ContactHelper extends HelperBase {
     }
 
     public List<ContactData> getList() {
+
         var contacts = new ArrayList<ContactData>();
         var entries = manager.driver.findElements(By.name("entry"));
         for (var entry : entries) {
             var checkbox = entry.findElement(By.cssSelector("input"));
             var id = checkbox.getAttribute("value");
-            contacts.add(new ContactData().withId(id));
+            var lastName = entry.findElement(By.cssSelector("td:nth-child(2)")).getText();
+
+            contacts.add(new ContactData()
+                            .withId(id)
+                            .withLastName(lastName));
+
 
         }
         return contacts;
