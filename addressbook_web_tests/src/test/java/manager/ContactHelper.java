@@ -8,6 +8,12 @@ import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
+    public void openContactPage() {
+        if (!manager.isElementPresent(By.id("maintable"))) {
+            click(By.linkText("home"));
+        }
+    }
+
     public ContactHelper(ApplicationManager manager) {
         super(manager);
     }
@@ -86,13 +92,25 @@ public class ContactHelper extends HelperBase {
         }
         return contacts;
     }
-    private static int getLastDigit(String number) {
-        String digits = number.replaceAll("[^0-9]", "");
-        if (!digits.isEmpty()) {
-            char lastChar = digits.charAt(digits.length() - 1);
-            return Character.getNumericValue(lastChar);
-        }
-        return -1;
+
+    public void modifyContact(ContactData contact, ContactData modifiedContact) {
+        openContactPage();
+        initContactModification(contact);
+        fillContactForm(modifiedContact);
+        submitContactModify();
+        returnToContactPage();
     }
+
+    private void initContactModification(ContactData contact) {
+        var elementId = manager.driver.findElement(By.id(contact.id()));
+        var entry = elementId.findElement(By.xpath("../.."));
+        var editButton = entry.findElement(By.cssSelector("td:nth-child(8)"));
+        editButton.click();
+    }
+
+    private void submitContactModify() {
+        click(By.name("update"));
+    }
+
 
 }
