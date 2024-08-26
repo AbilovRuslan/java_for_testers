@@ -84,10 +84,14 @@ public class ContactHelper extends HelperBase {
             var checkbox = entry.findElement(By.cssSelector("input"));
             var id = checkbox.getAttribute("value");
             var lastName = entry.findElement(By.cssSelector("td:nth-child(2)")).getText();
+            var firstName = entry.findElement(By.cssSelector("td:nth-child(3)")).getText();
+            var address = entry.findElement(By.cssSelector("td:nth-child(4)")).getText();
 
             contacts.add(new ContactData()
                     .withId(id)
-                    .withLastName(lastName));
+                    .withLastName(lastName)
+                    .withFirstName(firstName)
+                    .withAddress(address));
 
 
         }
