@@ -36,7 +36,7 @@ public class ContactModificationTests extends TestBase {
         // Модифицируем выбранный контакт
         app.contacts().modifyContact(oldContacts.get(index), modifiedContact);
 
-        // Получаем новый список контактов после изменений
+        
         var newContacts = app.contacts().getList();
 
         // Создаем ожидаемый список, где изменяем только модифицированный контакт
