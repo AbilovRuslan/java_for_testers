@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import static org.junit.jupiter.params.shadow.com.univocity.parsers.conversions.Conversions.trim;
+
 public class ContactCreationTests extends TestBase {
 
     public static List<ContactData> contactProvider() {
@@ -48,18 +50,21 @@ public class ContactCreationTests extends TestBase {
         newContact.sort(compareById); //Сортируем список newContact по id в Новом списке
         var expectedList = new ArrayList<>(oldContacts); // Создаем ожидаемый список, основанный на сохраненном старом списке контактов
         expectedList.add(contact.withId(newContact.get(newContact.size() - 1).id())
-                .withLastName("")
-                .withFirstName("")
-                .withAddress("")); //Добавляем новый контакт в ожидаемый список и устанавливаем его ID- как ID последнего контакт из нового списка
+                .withLastName(contact.lastName())
+                .withFirstName(contact.firstName())
+                .withAddress(contact.address())); //Добавляем новый контакт в ожидаемый список и устанавливаем его ID- как ID последнего контакт из нового списка
+
         expectedList.sort(compareById);// // Сортируем ожидаемый список по идентификаторам, чтобы он соответствовал порядку нового списка
         Assertions.assertEquals(newContact, expectedList); //Сравниваем фактический и ожидаемый списки на совпадение. И он не совпадает)))
+
 
     }
 
     public static List<ContactData> negativeContactProvider() {
-        return new ArrayList<>(List.of(
+        return List.of(
                 new ContactData().withFirstName("FirstName'"),
-                new ContactData().withLastName("LastName'")));
+                new ContactData().withLastName("LastName'")
+        );
     }
 
     @ParameterizedTest
@@ -68,8 +73,10 @@ public class ContactCreationTests extends TestBase {
         var oldContacts = app.contacts().getList();
         app.contacts().createContact(contact);
         var newContact = app.contacts().getList();
+
         Assertions.assertEquals(oldContacts, newContact);
     }
+
 
 
 }

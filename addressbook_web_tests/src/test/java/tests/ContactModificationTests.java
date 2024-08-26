@@ -41,7 +41,8 @@ public class ContactModificationTests extends TestBase {
 
         // Создаем ожидаемый список, где изменяем только модифицированный контакт
         var expectedList = new ArrayList<ContactData>(oldContacts);
-        expectedList.set(index, modifiedContact.withId(oldContacts.get(index).id()));
+        expectedList.set(index, modifiedContact.withId(oldContacts.get(index).id())
+                .withLastName(modifiedContact.lastName().trim()));
 
         // Сортируем списки по ID для корректного сравнения
         Comparator<ContactData> compareById = (o1, o2) -> {
