@@ -15,6 +15,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation'org.seleniumhq.selenium:selenium-java:4.10.0'
     implementation'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+    implementation'com.mysql:mysql-connector-j:8.1.0'
+
 }
 
 test {
