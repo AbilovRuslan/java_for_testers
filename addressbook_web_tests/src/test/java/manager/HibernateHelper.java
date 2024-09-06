@@ -1,6 +1,5 @@
 package manager;
 
-import manager.ApplicationManager;
 import manager.hbm.ContactRecord;
 import manager.hbm.GroupRecord;
 import model.ContactData;
@@ -8,8 +7,6 @@ import model.GroupData;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.dialect.MariaDBDialect;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +46,14 @@ public class HibernateHelper extends HelperBase {
         return new GroupRecord(Integer.parseInt(id), data.name(), data.header(), data.footer());
     }
 
+    public static List<ContactData> convertContactListFromRecords(List<ContactRecord> records) {
+        List<ContactData> contacts = new ArrayList<>();
+        for (ContactRecord record : records) {
+            contacts.add(convert(record));
+        }
+        return contacts;
+    }
+
     static List<ContactData> convertContactList(List<ContactRecord> records) {
         List<ContactData> result = new ArrayList<>();
         for (var record : records) {
@@ -70,6 +75,12 @@ public class HibernateHelper extends HelperBase {
             id = "0";
         }
         return new ContactRecord(Integer.parseInt(id), data.firstName(), data.lastName(), data.address());
+    }
+
+    public List<ContactData> getContactList() {
+        return convertContactListFromRecords(sessionFactory.fromSession(session -> {
+            return session.createQuery("from ContactRecord", ContactRecord.class).list();
+        }));
     }
 
     public List<GroupData> getGroupList() {

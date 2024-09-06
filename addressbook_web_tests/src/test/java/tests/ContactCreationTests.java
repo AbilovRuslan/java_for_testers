@@ -2,11 +2,8 @@ package tests;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import common.CommonFunctions;
 import model.ContactData;
-import model.GroupData;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -15,8 +12,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
-import static org.junit.jupiter.params.shadow.com.univocity.parsers.conversions.Conversions.trim;
 
 public class ContactCreationTests extends TestBase {
 
@@ -37,35 +32,34 @@ public class ContactCreationTests extends TestBase {
         }
 
 
-    ObjectMapper mapper = new ObjectMapper();
-    var value = mapper.readValue(new File("contacts.json"), new TypeReference<List<ContactData>>() {});
-    result.addAll(value);
+        ObjectMapper mapper = new ObjectMapper();
+        var value = mapper.readValue(new File("contacts.json"), new TypeReference<List<ContactData>>() {
+        });
+        result.addAll(value);
         return result;
     }
 
 
-
     @ParameterizedTest
     @MethodSource("contactProvider")
-    public void canCreateMultipleContacts(ContactData contact) {
-        var oldContacts = app.jdbc().getContactsList();
+    public void canCreateContacts(ContactData contact) {
+        var oldContacts = app.hbm().getContactList();
         app.contacts().createContact(contact);
-        var newContact = app.jdbc().getContactsList();
+        var newContact = app.hbm().getContactList();
 
-        // компаратор для сортировки по (id) в порядке возрастания
         Comparator<ContactData> compareById = (o1, o2) -> {
-            // Сравниваем значения идентификаторов двух объектов. строки в числа для сравнения
+
             return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
         };
-        newContact.sort(compareById); // Сортируем список newContact по id в Новом списке
+        newContact.sort(compareById);
         var expectedList = new ArrayList<>(oldContacts); // Создаем ожидаемый список, основанный на сохраненном старом списке контактов
         expectedList.add(contact.withId(newContact.get(newContact.size() - 1).id())
                 .withLastName(contact.lastName())
                 .withFirstName(contact.firstName())
-                .withAddress(contact.address())); // Добавляем новый контакт в ожидаемый список и устанавливаем его ID- как ID последнего контакт из нового списка
+                .withAddress(contact.address()));
 
-        expectedList.sort(compareById); // Сортируем ожидаемый список по идентификаторам, чтобы он соответствовал порядку нового списка
-        Assertions.assertEquals(newContact, expectedList); // Сравниваем фактический и ожидаемый списки на совпадение. И он не совпадает)))
+        expectedList.sort(compareById);
+        Assertions.assertEquals(newContact, expectedList);
     }
 
     public static List<ContactData> negativeContactProvider() {
