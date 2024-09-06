@@ -25,8 +25,8 @@ public class ContactModificationTests extends TestBase {
         var index = rnd.nextInt(oldContacts.size());
         var testData = new ContactData("", "First Name",
                 "Modify Middle Name",
-                "Modify Last Name",
-                "Modify Nick Name",
+                "ModifyName",
+                "ModifyName",
                 "src/test/resources/images/file5.jpg",
                 "Modify Title",
                 "ModifyCompany",
@@ -36,11 +36,11 @@ public class ContactModificationTests extends TestBase {
                 "790234242345353",
                 "760053242342345535354",
                 "",
-                "email1@mail.com",
-                "email2@mail.com",
-                "email3@mail.com",
+                "email1@gmail.com",
+                "email2@meail.com",
+                "email3@meeail.com",
                 "",
-                "MyHomePage",
+                "HomePage",
                 "22",
                 "June",
                 "2020",
@@ -48,7 +48,6 @@ public class ContactModificationTests extends TestBase {
                 "July",
                 "2025");
         app.contacts().modifyContact(oldContacts.get(index),testData);
-        //app.contacts().modifyContact(oldContacts.get(index), testData);
         var newContacts = app.hbm().getContactList();
         var expectedList = new ArrayList<ContactData>(oldContacts);
         expectedList.set(index, testData.withId(oldContacts.get(index).id()));
