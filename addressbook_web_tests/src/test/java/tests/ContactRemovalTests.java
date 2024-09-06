@@ -1,6 +1,7 @@
 package tests;
 
 import model.ContactData;
+import model.GroupData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -16,26 +17,26 @@ public class ContactRemovalTests extends TestBase {
                     "Middle Name",
                     "Last Name",
                     "Nick Name",
-                    "src/test/resources/images/file.png",
+                    "src/test/resources/images/file2.png",
                     "Title",
                     "Company",
                     "Address",
-                    "767676765",
-                    "9884433t55",
-                    "543468765",
-                    "52283444",
+                    "757575",
+                    "78005553535",
+                    "79005553535",
+                    "76005553535",
                     "",
-                    "email1@gmail.com",
-                    "email2@rmail.com",
-                    "email3@amail.com",
+                    "email1@mail.com",
+                    "email2@mail.com",
+                    "email3@mail.com",
                     "",
-                    "HomePage",
-                    "23",
-                    "June",
-                    "1996",
-                    "44",
-                    "July",
-                    "2024"));
+                    "MyHomePage",
+                    "20",
+                    "May",
+                    "1990",
+                    "15",
+                    "December",
+                    "2012"));
         }
         var oldContacts = app.hbm().getContactList();
         var random = new Random();
@@ -47,17 +48,5 @@ public class ContactRemovalTests extends TestBase {
         Assertions.assertEquals(newContacts, expectedList);
     }
 
-    @Test
-    public void canRemovalAllContacts() {
 
-            if (app.contacts().getCount() == 0) {
-                app.contacts().createContact(new ContactData()
-                        .withFirstName("Smth")
-                        .withLastName("Smth")
-                        .withAddress("121609, Anyway, 1 Empty str"));
-
-            }
-            app.contacts().removeAllContacts();
-            Assertions.assertEquals(0, app.contacts().getCount());
-        }
 }

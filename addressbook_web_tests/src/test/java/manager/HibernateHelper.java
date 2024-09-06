@@ -143,16 +143,19 @@ public class HibernateHelper extends HelperBase {
             return session.createQuery("select count (*) from ContactRecord", Long.class).getSingleResult();
         });
     }
-    public void verifyOrCreateAvailableContact() {
-        if (getContactCount() == 0) {
-            createContact(new ContactData().withFirstName("first name").withLastName("last name"));
-        }
-    }
+
     public void createContact(ContactData contactData) {
         sessionFactory.inSession(session -> {
             session.getTransaction().begin();
             session.persist(convert(contactData));
             session.getTransaction().commit();
         });
+    }
+
+
+    public void verifyOrCreateAvailableContact() {
+        if (getContactCount() == 0) {
+            createContact(new ContactData().withFirstName("first name").withLastName("last name"));
+        }
     }
 }
