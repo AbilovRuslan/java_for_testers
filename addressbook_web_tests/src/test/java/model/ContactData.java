@@ -2,26 +2,215 @@ package model;
 
 import java.util.Objects;
 
-public record ContactData(String id, String lastName, String firstName, String address) {
-    public ContactData() {
+public record ContactData(String id,
+                          String firstName,
+                          String middleName,
+                          String lastName,
+                          String nickName,
+                          String file,
+                          String title,
+                          String company,
+                          String address,
+                          String homeNumber,
+                          String mobileNumber,
+                          String workNumber,
+                          String faxNumber,
+                          String allPhones,
+                          String email,
+                          String email2,
+                          String email3,
+                          String allEmails,
+                          String homePage,
+                          String birthDay,
+                          String birthMonth,
+                          String birthYear,
+                          String anniversaryDay,
+                          String anniversaryMonth,
+                          String anniversaryYear
+) {
 
-        this("", "", "", "");
+    public ContactData() {
+        this("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
     }
 
     public ContactData withId(String id) {
-        return new ContactData(id,this.lastName, this.firstName, this.address);
-    }
-
-    public ContactData withLastName(String lastName) {
-        return new ContactData(this.id,lastName, this.firstName, this.address);
+        return new ContactData(
+                id,
+                this.firstName,
+                this.middleName,
+                this.lastName,
+                this.nickName,
+                this.file,
+                this.title,
+                this.company,
+                this.address,
+                this.homeNumber,
+                this.mobileNumber,
+                this.workNumber,
+                this.faxNumber,
+                this.allPhones,
+                this.email,
+                this.email2,
+                this.email3,
+                this.allEmails,
+                this.homePage,
+                this.birthDay,
+                this.birthMonth,
+                this.birthYear,
+                this.anniversaryDay,
+                this.anniversaryMonth,
+                this.anniversaryYear
+        );
     }
 
     public ContactData withFirstName(String firstName) {
-        return new ContactData(this.id,this.lastName, firstName, this.address);
+        return new ContactData(
+                this.id,
+                firstName,
+                this.middleName,
+                this.lastName,
+                this.nickName,
+                this.file,
+                this.title,
+                this.company,
+                this.address,
+                this.homeNumber,
+                this.mobileNumber,
+                this.workNumber,
+                this.faxNumber,
+                this.allPhones,
+                this.email,
+                this.email2,
+                this.email3,
+                this.allEmails,
+                this.homePage,
+                this.birthDay,
+                this.birthMonth,
+                this.birthYear,
+                this.anniversaryDay,
+                this.anniversaryMonth,
+                this.anniversaryYear
+        );
+    }
+
+    public ContactData withLastName(String lastName) {
+        return new ContactData(
+                this.id,
+                this.firstName,
+                this.middleName,
+                lastName,
+                this.nickName,
+                this.file,
+                this.title,
+                this.company,
+                this.address,
+                this.homeNumber,
+                this.mobileNumber,
+                this.workNumber,
+                this.faxNumber,
+                this.allPhones,
+                this.email,
+                this.email2,
+                this.email3,
+                this.allEmails,
+                this.homePage,
+                this.birthDay,
+                this.birthMonth,
+                this.birthYear,
+                this.anniversaryDay,
+                this.anniversaryMonth,
+                this.anniversaryYear
+        );
     }
 
     public ContactData withAddress(String address) {
-        return new ContactData(this.id,this.lastName, this.firstName, address);
+        return new ContactData(
+                this.id,
+                this.firstName,
+                this.middleName,
+                this.lastName,
+                this.nickName,
+                this.file,
+                this.title,
+                this.company,
+                address,
+                this.homeNumber,
+                this.mobileNumber,
+                this.workNumber,
+                this.faxNumber,
+                this.allPhones,
+                this.email,
+                this.email2,
+                this.email3,
+                this.allEmails,
+                this.homePage,
+                this.birthDay,
+                this.birthMonth,
+                this.birthYear,
+                this.anniversaryDay,
+                this.anniversaryMonth,
+                this.anniversaryYear
+        );
+    }
+
+    public ContactData withPhones(String homeNumber, String mobileNumber, String workNumber, String faxNumber) {
+        return new ContactData(
+                this.id,
+                this.firstName,
+                this.middleName,
+                this.lastName,
+                this.nickName,
+                this.file,
+                this.title,
+                this.company,
+                this.address,
+                homeNumber,
+                mobileNumber,
+                workNumber,
+                faxNumber,
+                this.allPhones,
+                this.email,
+                this.email2,
+                this.email3,
+                this.allEmails,
+                this.homePage,
+                this.birthDay,
+                this.birthMonth,
+                this.birthYear,
+                this.anniversaryDay,
+                this.anniversaryMonth,
+                this.anniversaryYear
+        );
+    }
+
+    public ContactData withEmails(String email, String email2, String email3) {
+        return new ContactData(
+                this.id,
+                this.firstName,
+                this.middleName,
+                this.lastName,
+                this.nickName,
+                this.file,
+                this.title,
+                this.company,
+                this.address,
+                this.homeNumber,
+                this.mobileNumber,
+                this.workNumber,
+                this.faxNumber,
+                this.allPhones,
+                email,
+                email2,
+                email3,
+                this.allEmails,
+                this.homePage,
+                this.birthDay,
+                this.birthMonth,
+                this.birthYear,
+                this.anniversaryDay,
+                this.anniversaryMonth,
+                this.anniversaryYear
+        );
     }
 
     @Override
@@ -37,7 +226,93 @@ public record ContactData(String id, String lastName, String firstName, String a
         return Objects.hash(firstName, lastName);
     }
 
+    public ContactData withAllEmails(String allEmails) {
+        return new ContactData(
+                this.id,
+                this.firstName,
+                this.middleName,
+                this.lastName,
+                this.nickName,
+                this.file,
+                this.title,
+                this.company,
+                this.address,
+                this.homeNumber,
+                this.mobileNumber,
+                this.workNumber,
+                this.faxNumber,
+                this.allPhones,
+                this.email,
+                this.email2,
+                this.email3,
+                allEmails,
+                this.homePage,
+                this.birthDay,
+                this.birthMonth,
+                this.birthYear,
+                this.anniversaryDay,
+                this.anniversaryMonth,
+                this.anniversaryYear
+        );
+    }
 
+    public ContactData withAllPhones(String allPhones) {
+        return new ContactData(
+                this.id,
+                this.firstName,
+                this.middleName,
+                this.lastName,
+                this.nickName,
+                this.file,
+                this.title,
+                this.company,
+                this.address,
+                this.homeNumber,
+                this.mobileNumber,
+                this.workNumber,
+                this.faxNumber,
+                allPhones,
+                this.email,
+                this.email2,
+                this.email3,
+                this.allEmails,
+                this.homePage,
+                this.birthDay,
+                this.birthMonth,
+                this.birthYear,
+                this.anniversaryDay,
+                this.anniversaryMonth,
+                this.anniversaryYear
+        );
+    }
 
-
+    public ContactData withPhoto(String photo) {
+        return new ContactData(
+                this.id,
+                this.firstName,
+                this.middleName,
+                this.lastName,
+                this.nickName,
+                photo,
+                this.title,
+                this.company,
+                this.address,
+                this.homeNumber,
+                this.mobileNumber,
+                this.workNumber,
+                this.faxNumber,
+                this.allPhones,
+                this.email,
+                this.email2,
+                this.email3,
+                this.allEmails,
+                this.homePage,
+                this.birthDay,
+                this.birthMonth,
+                this.birthYear,
+                this.anniversaryDay,
+                this.anniversaryMonth,
+                this.anniversaryYear
+        );
+    }
 }
