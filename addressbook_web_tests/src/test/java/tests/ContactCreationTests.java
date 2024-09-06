@@ -43,12 +43,14 @@ public class ContactCreationTests extends TestBase {
         return result;
     }
 
+
+
     @ParameterizedTest
     @MethodSource("contactProvider")
     public void canCreateMultipleContacts(ContactData contact) {
-        var oldContacts = app.contacts().getList();
+        var oldContacts = app.jdbc().getContactsList();
         app.contacts().createContact(contact);
-        var newContact = app.contacts().getList();
+        var newContact = app.jdbc().getContactsList();
 
         // компаратор для сортировки по (id) в порядке возрастания
         Comparator<ContactData> compareById = (o1, o2) -> {
