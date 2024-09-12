@@ -79,18 +79,18 @@ public class ContactCreationTests extends TestBase {
                         CommonFunctions.randomString(10) + "@mail.com");
 
         if (app.hbm().getGroupCount() == 0) {
-            app.hbm().createGroup(new GroupData()
-                    .withName("Group name")
-                    .withHeader("Group header")
-                    .withFooter("Group footer"));
+            app.hbm().createGroup(new GroupData().
+                    withName("Group name").
+                    withHeader("Group header").
+                    withFooter("Group footer"));
         }
-        var groups = app.hbm().getGroupList();
-        var group = groups.get(groups.size() - 1);
+        var groups = app.hbm().getGroupList(); var group = groups.get(groups.size() - 1);
         var oldRelated = app.hbm().getContactsInGroup(group);
-        app.contacts().createContact(contact);
+        app.contacts().createContact(contact, group);
         var newRelated = app.hbm().getContactsInGroup(group);
         Assertions.assertEquals(oldRelated.size() + 1, newRelated.size());
     }
+
 
     @Test
     public void canAddContactToGroup() {
