@@ -26,7 +26,7 @@ public class ContactInfoTests extends TestBase {
 
     @Test
     void testEmailsAddressPhones() {
-        
+
         var oldContacts = app.hbm().getContactList();
         var rnd = new Random();
         var index = rnd.nextInt(oldContacts.size());

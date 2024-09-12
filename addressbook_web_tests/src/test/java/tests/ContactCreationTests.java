@@ -47,9 +47,6 @@ public class ContactCreationTests extends TestBase {
     }
 
 
-
-
-
     public static List<ContactData> negativeContactProvider() {
         return List.of(
                 new ContactData().withFirstName("FirstName'"),
@@ -94,38 +91,65 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void canAddContactToGroup() {
+
         if (app.hbm().getContactCount() == 0) {
-            var contact = new ContactData()
+            app.hbm().createContact(new ContactData()
+                    .withLastName(CommonFunctions.randomString(10))
+                    .withFirstName(CommonFunctions.randomString(10))
+                    .withAddress(CommonFunctions.randomString(10)));
+        }
+
+        if (app.hbm().getGroupCount() == 0) {
+            app.hbm().createGroup(new GroupData()
+                    .withName(CommonFunctions.randomString(10))
+                    .withHeader(CommonFunctions.randomString(10))
+                    .withFooter(CommonFunctions.randomString(10)));
+        }
+
+        List<ContactData> contacts = app.hbm().getContactList();
+        List<GroupData> groups = app.hbm().getGroupList();
+
+
+        ContactData contactToAdd = null;
+        GroupData groupToAdd = null;
+        for (GroupData group : groups) {
+            List<ContactData> contactsInGroup = app.hbm().getContactsInGroup(group);
+            for (ContactData contact : contacts) {
+                if (!contactsInGroup.contains(contact)) {
+                    contactToAdd = contact;
+                    groupToAdd = group;
+                }
+            }
+        }
+
+        if (contactToAdd == null) {
+            contactToAdd = new ContactData()
                     .withLastName(CommonFunctions.randomString(10))
                     .withFirstName(CommonFunctions.randomString(10))
                     .withAddress(CommonFunctions.randomString(10));
-            app.hbm().createContact(contact);
+            app.hbm().createContact(contactToAdd);
         }
-        if (app.hbm().getGroupCount() == 0) {
-            var group = new GroupData().
-                    withName(CommonFunctions.randomString(10)).
-                    withHeader(CommonFunctions.randomString(10)).
-                    withFooter(CommonFunctions.randomString(10));
-            app.hbm().createGroup(group);
+
+        if (groupToAdd == null) {
+            groupToAdd = new GroupData()
+                    .withName(CommonFunctions.randomString(10))
+                    .withHeader(CommonFunctions.randomString(10))
+                    .withFooter(CommonFunctions.randomString(10));
+            app.hbm().createGroup(groupToAdd);
         }
-        var contacts = app.hbm().getContactList();
-        var groups = app.hbm().getGroupList();
-        var rnd = new Random();
-        var contactsIndex = rnd.nextInt(contacts.size());
-        var groupsIndex = rnd.nextInt(groups.size());
-        var oldRelated = app.hbm().getContactsInGroup(groups.get(groupsIndex));
-        app.contacts().addToGroup(contacts.get(contactsIndex), groups.get(groupsIndex));
-        var expectedList = new ArrayList<ContactData>(oldRelated);
-        expectedList.add(contacts.get(contactsIndex));
-        var newRelated = app.hbm().getContactsInGroup(groups.get(groupsIndex));
-        Comparator<ContactData> compareById = (o1, o2) -> {
-            return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
-        };
+
+        var oldRelated = app.hbm().getContactsInGroup(groupToAdd);
+        app.contacts().addToGroup(contactToAdd, groupToAdd);
+        var expectedList = new ArrayList<>(oldRelated);
+        expectedList.add(contactToAdd);
+        var newRelated = app.hbm().getContactsInGroup(groupToAdd);
+
+        Comparator<ContactData> compareById = Comparator.comparingInt(o -> Integer.parseInt(o.id()));
         newRelated.sort(compareById);
         expectedList.sort(compareById);
-        Assertions.assertEquals(newRelated, expectedList);
-    }
 
+        Assertions.assertEquals(expectedList, newRelated);
+    }
     @Test
     public void canRemoveContactFromGroup() {
         if (app.hbm().getContactCount() == 0) {
