@@ -1,3 +1,4 @@
+
 package model;
 
 import java.util.Objects;
@@ -32,8 +33,6 @@ public record ContactData(String id,
     public ContactData() {
         this("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
     }
-
-
 
     public ContactData withId(String id) {
         return new ContactData(
@@ -317,4 +316,6 @@ public record ContactData(String id,
                 this.anniversaryYear
         );
     }
+
+
 }
