@@ -1,2 +1,3 @@
 rootProject.name = 'addressbook_web_tests'
+include 'mantis_tests'
 

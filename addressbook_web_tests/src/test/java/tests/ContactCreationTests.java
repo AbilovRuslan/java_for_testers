@@ -143,7 +143,7 @@ public class ContactCreationTests extends TestBase {
 
             // Проверка на наличие контакта в новой группе
             if (!app.hbm().getContactsInGroup(groupData).contains(contactData)) {
-                
+
                 groupData = groups.get(groups.size() - 1); // Используем новую группу
             }
         }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e14fa779-2208-4e28-9f04-c80e8d5e1c13" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/mantis_tests/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/manager/ApplicationManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/manager/HelperBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/manager/SessionHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/tests/LoginTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/tests/TestBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ContactCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ContactCreationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mantis_tests/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mantis_tests/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mantis_tests/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mantis_tests/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mantis_tests/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mantis_tests/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2mFVPHwiskSThM0Bcs6kcWIGJ2F" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ruslan/Desktop/Homework/java_for_testers/addressbook_web_tests"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e14fa779-2208-4e28-9f04-c80e8d5e1c13" name="Changes" comment="" />
+      <created>1726672287451</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726672287451</updated>
+    </task>
+    <servers />
+  </component>
+</project>
