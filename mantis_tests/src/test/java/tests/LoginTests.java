@@ -14,6 +14,4 @@ public class LoginTests extends TestBase {
 
     }
 
-
-    тиопроорор
 }
