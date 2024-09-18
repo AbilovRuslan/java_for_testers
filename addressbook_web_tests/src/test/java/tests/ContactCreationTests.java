@@ -136,14 +136,14 @@ public class ContactCreationTests extends TestBase {
                     withFooter(CommonFunctions.randomString(10));
             app.hbm().createGroup(group);
             groups = app.hbm().getGroupList(); // Здесь мы обновляем список групп
-            groupData = groups.get(groups.size() - 1); // Последняя добавленная группа
+            groupData = groups.get(groups.size() - 1); // Теперь последняя группа будет последней в сортированном списке
             var rnd = new Random();
             var contactsIndex = rnd.nextInt(contacts.size());
             contactData = app.hbm().getContactList().get(contactsIndex); // Уникальный контакт
 
             // Проверка на наличие контакта в новой группе
             if (!app.hbm().getContactsInGroup(groupData).contains(contactData)) {
-                contactData = contactData; // Присваиваем контакт, если он не в группе
+                
                 groupData = groups.get(groups.size() - 1); // Используем новую группу
             }
         }
@@ -160,6 +160,9 @@ public class ContactCreationTests extends TestBase {
         expectedList.sort(compareById);
         Assertions.assertEquals(newRelated, expectedList);
     }
+
+
+
     @Test
     public void canRemoveContactFromGroup() {
         if (app.hbm().getContactCount() == 0) {
