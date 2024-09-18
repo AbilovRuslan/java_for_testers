@@ -135,10 +135,17 @@ public class ContactCreationTests extends TestBase {
                     withHeader(CommonFunctions.randomString(10)).
                     withFooter(CommonFunctions.randomString(10));
             app.hbm().createGroup(group);
-            groupData = groups.get(groups.size() - 1);
+            groups = app.hbm().getGroupList(); // Здесь мы обновляем список групп
+            groupData = groups.get(groups.size() - 1); // Последняя добавленная группа
             var rnd = new Random();
             var contactsIndex = rnd.nextInt(contacts.size());
-            contactData = app.hbm().getContactList().get(contactsIndex);
+            contactData = app.hbm().getContactList().get(contactsIndex); // Уникальный контакт
+
+            // Проверка на наличие контакта в новой группе
+            if (!app.hbm().getContactsInGroup(groupData).contains(contactData)) {
+                contactData = contactData; // Присваиваем контакт, если он не в группе
+                groupData = groups.get(groups.size() - 1); // Используем новую группу
+            }
         }
 
         var oldRelated = app.hbm().getContactsInGroup(groupData);
