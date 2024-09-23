@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 
 import java.nio.file.Paths;
 
-import org.openqa.selenium.By;
 
 public class HelperBase {
     protected final ApplicationManager manager;
@@ -21,6 +20,10 @@ public class HelperBase {
         click(locator);
         manager.driver().findElement(locator).clear();
         manager.driver().findElement(locator).sendKeys(text);
+    }
+
+    protected void attach(By locator, String file) {
+        manager.driver().findElement(locator).sendKeys(Paths.get(file).toAbsolutePath().toString());
     }
 
     protected boolean isElementPresent(By locator) {

@@ -1,5 +1,6 @@
 package manager;
 
+import common.CommonFunctions;
 import jakarta.mail.*;
 import model.MailMessage;
 
@@ -11,9 +12,11 @@ import java.util.List;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
+import static jdk.tools.jlink.internal.plugins.PluginsResourceBundle.getMessage;
+
 public class MailHelper extends HelperBase {
-    public MailHelper(ApplicationManager manager) {
-        super(manager);
+    public MailHelper(ApplicationManager app) {
+        super(app);
     }
 
     public List<MailMessage> receive(String username, String password, Duration duration) {
@@ -23,16 +26,16 @@ public class MailHelper extends HelperBase {
                 var inbox = getInbox(username, password);
                 inbox.open(Folder.READ_ONLY);
                 var messages = inbox.getMessages();
-
                 var result = Arrays.stream(messages).map(m -> {
-                    try {
-                        return new MailMessage()
-                                .withFrom(m.getFrom()[0].toString())
-                                .withContent((String) m.getContent());
-                    } catch (MessagingException | IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                }).toList();
+                            try {
+                                return new MailMessage()
+                                        .withFrom(m.getFrom()[0].toString())
+                                        .withContent((String)m.getContent());
+                            } catch (MessagingException | IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        })
+                        .toList();
                 inbox.close();
                 inbox.getStore().close();
                 if (result.size() > 0) {
@@ -43,6 +46,7 @@ public class MailHelper extends HelperBase {
             }
             try {
                 Thread.sleep(1000);
+                System.out.println("I'm waiting...");
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -50,11 +54,11 @@ public class MailHelper extends HelperBase {
         throw new RuntimeException("No mail");
     }
 
-    private static Folder getInbox(String username, String password) {
+    private Folder getInbox(String username, String password){
+
         try {
-            Session session = Session.getInstance(new Properties());
-            Store store = null;
-            store = session.getStore("pop3");
+            var session = Session.getInstance(new Properties());
+            var store = session.getStore("pop3");
             store.connect("localhost", username, password);
             var inbox = store.getFolder("INBOX");
             return inbox;
@@ -63,7 +67,8 @@ public class MailHelper extends HelperBase {
         }
     }
 
-    public void drain(String username, String password) {
+    public void drain(String username, String password){
+
         try {
             var inbox = getInbox(username, password);
             inbox.open(Folder.READ_WRITE);
@@ -79,15 +84,34 @@ public class MailHelper extends HelperBase {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
+
     }
 
-    public String getMessage(String email, String password) {
-        var messages = receive(email, password, Duration.ofSeconds(10));
-        var text = messages.get(0).content();
-        return text;
+    public List<MailMessage> receive(String username, String password){
+        try {
+            var inbox = getInbox(username, password);
+            inbox.open(Folder.READ_ONLY);
+            var messages = inbox.getMessages();
+            var result = Arrays.stream(messages).map(m -> {
+                        try {
+                            return new MailMessage()
+                                    .withFrom(m.getFrom()[0].toString())
+                                    .withContent((String)m.getContent());
+                        } catch (MessagingException | IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    })
+                    .toList();
+            inbox.close();
+            inbox.getStore().close();
+            return result;
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-
-
-
+    public String getUrl(String email, String password) {
+        var text = getMessage(email, password);
+        return CommonFunctions.extractUrl(text);
+    }
 }

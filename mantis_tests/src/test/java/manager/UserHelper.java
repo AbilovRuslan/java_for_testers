@@ -41,7 +41,4 @@ public class UserHelper extends HelperBase {
         element.click();
     }
 
-
-
-
 }
