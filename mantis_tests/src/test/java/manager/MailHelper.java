@@ -9,7 +9,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
-
+import java.util.regex.Pattern;
 
 public class MailHelper extends HelperBase {
     public MailHelper(ApplicationManager manager) {
@@ -81,6 +81,11 @@ public class MailHelper extends HelperBase {
         }
     }
 
+    public String getMessage(String email, String password) {
+        var messages = receive(email, password, Duration.ofSeconds(10));
+        var text = messages.get(0).content();
+        return text;
+    }
 
 
 
