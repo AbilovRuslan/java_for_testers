@@ -15,18 +15,6 @@ public class UserHelper extends HelperBase {
         super(manager);
     }
 
-    public void create(String mail, String username) {
-        openManage();
-        accounts();
-        click(By.cssSelector(".pull-left .btn-round"));
-        type(By.name("username"), username);
-        type(By.name("realname"), username);
-        type(By.name("email"), mail);
-        click(By.cssSelector("[value='Create User']"));
-    }
-
-
-
     private void accounts() {
         click(By.linkText("Users"));
     }
