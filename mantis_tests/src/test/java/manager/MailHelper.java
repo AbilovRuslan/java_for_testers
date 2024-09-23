@@ -1,20 +1,20 @@
 package manager;
 
-import common.CommonFunctions;
-import jakarta.mail.*;
+import jakarta.mail.Flags;
+import jakarta.mail.Folder;
+import jakarta.mail.MessagingException;
+import jakarta.mail.Session;
 import model.MailMessage;
-
 
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
-import java.util.regex.Pattern;
 
-import static jdk.tools.jlink.internal.plugins.PluginsResourceBundle.getMessage;
 
 public class MailHelper extends HelperBase {
+
     public MailHelper(ApplicationManager app) {
         super(app);
     }
@@ -30,7 +30,7 @@ public class MailHelper extends HelperBase {
                             try {
                                 return new MailMessage()
                                         .withFrom(m.getFrom()[0].toString())
-                                        .withContent((String)m.getContent());
+                                        .withContent((String) m.getContent());
                             } catch (MessagingException | IOException e) {
                                 throw new RuntimeException(e);
                             }
@@ -54,7 +54,7 @@ public class MailHelper extends HelperBase {
         throw new RuntimeException("No mail");
     }
 
-    private Folder getInbox(String username, String password){
+    private Folder getInbox(String username, String password) {
 
         try {
             var session = Session.getInstance(new Properties());
@@ -67,7 +67,7 @@ public class MailHelper extends HelperBase {
         }
     }
 
-    public void drain(String username, String password){
+    public void drain(String username, String password) {
 
         try {
             var inbox = getInbox(username, password);
@@ -87,7 +87,7 @@ public class MailHelper extends HelperBase {
 
     }
 
-    public List<MailMessage> receive(String username, String password){
+    public List<MailMessage> receive(String username, String password) {
         try {
             var inbox = getInbox(username, password);
             inbox.open(Folder.READ_ONLY);
@@ -96,7 +96,7 @@ public class MailHelper extends HelperBase {
                         try {
                             return new MailMessage()
                                     .withFrom(m.getFrom()[0].toString())
-                                    .withContent((String)m.getContent());
+                                    .withContent((String) m.getContent());
                         } catch (MessagingException | IOException e) {
                             throw new RuntimeException(e);
                         }
@@ -108,10 +108,5 @@ public class MailHelper extends HelperBase {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public String getUrl(String email, String password) {
-        var text = getMessage(email, password);
-        return CommonFunctions.extractUrl(text);
     }
 }
