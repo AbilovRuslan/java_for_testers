@@ -87,6 +87,10 @@ public class MailHelper extends HelperBase {
 
     }
 
+    public String getUrl(String email) {
+
+    }
+
     public List<MailMessage> receive(String username, String password) {
         try {
             var inbox = getInbox(username, password);

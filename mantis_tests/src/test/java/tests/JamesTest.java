@@ -8,6 +8,6 @@ public class JamesTest extends TestBase {
 
     @Test
     public void canCreateUser() {
-        app.james().addUser(String.format("%s@localhost", CommonFunctions.randomString(5)), "password");
+        app.jamesCli().addUser(String.format("%s@localhost", CommonFunctions.randomString(5)), "password");
     }
 }

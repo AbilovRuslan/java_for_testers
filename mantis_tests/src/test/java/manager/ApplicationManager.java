@@ -17,11 +17,10 @@ public class ApplicationManager {
     private JamesCliHelper james;
     private MailHelper mail;
     private UserHelper userHelper;
+    private Properties properties;
+    private String string;
+    private String password;
 
-    public void init(String browser, Properties prop) {
-        this.prop = prop;
-        this.browser = browser;
-    }
 
     public WebDriver driver() {
         if(driver == null) {
@@ -57,11 +56,22 @@ public class ApplicationManager {
         return prop.getProperty(key);
     }
 
-    public JamesCliHelper james() {
+    public JamesCliHelper jamesCli() {
         if(james == null) {
             james = new JamesCliHelper(this);
         }
         return james;
+    }
+
+    public UserHelper user() {
+        if (userHelper == null) {
+            userHelper = new UserHelper(this);
+        }
+        return userHelper;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public MailHelper mail() {
@@ -78,5 +88,15 @@ public class ApplicationManager {
             userHelper = new UserHelper(this);
         }
         return userHelper;
+    }
+
+    public void init(String browser, Properties properties) {
+        this.string = browser;
+        this.properties = properties;
+    }
+
+
+    public String property(String name) {
+        return properties.getProperty(name);
     }
 }

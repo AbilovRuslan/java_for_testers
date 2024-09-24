@@ -29,4 +29,12 @@ public class UserHelper extends HelperBase {
         element.click();
     }
 
+    public void create(String email, String name, String password) {
+    }
+
+
+   
+
+    public void setPassword(String password) {
+    }
 }
