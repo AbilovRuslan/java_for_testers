@@ -88,7 +88,7 @@ public class MailHelper extends HelperBase {
     }
 
     public String getUrl(String email) {
-
+        return email;
     }
 
     public List<MailMessage> receive(String username, String password) {
