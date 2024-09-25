@@ -4,6 +4,8 @@ package manager;
 import org.openqa.selenium.io.CircularOutputStream;
 import org.openqa.selenium.os.CommandLine;
 
+import java.util.Map;
+
 import static tests.TestBase.app;
 
 
@@ -23,5 +25,8 @@ public class JamesCliHelper extends HelperBase {
         cmd.execute();
         cmd.waitFor();
         System.out.println(out);
+    }
+
+    public void addUser(Map<String, String> user) {
     }
 }

@@ -4,6 +4,7 @@ import okhttp3.*;
 
 import java.io.IOException;
 import java.net.CookieManager;
+import java.util.Map;
 
 import static tests.TestBase.app;
 
@@ -46,4 +47,6 @@ public class HttpSessionHelper extends HelperBase {
         }
     }
 
+    public void login(Map<String, String> user) {
+    }
 }

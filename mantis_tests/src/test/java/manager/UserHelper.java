@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import java.time.Duration;
+import java.util.Map;
 
 public class UserHelper extends HelperBase {
 
@@ -35,6 +36,9 @@ public class UserHelper extends HelperBase {
 
    
 
-    public void setPassword(String password) {
+    public void finishCreation(String password) {
+    }
+
+    public void create(Map<String, String> user) {
     }
 }

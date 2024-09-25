@@ -1,6 +1,7 @@
 package tests;
 
 import common.CommonFunctions;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -38,13 +39,13 @@ public class UserRegistrationTests extends TestBase {
     @ParameterizedTest
     @MethodSource("userProvider")
     void canRegisterUser(Map<String, String> user) {
-        app.jamesCli().addUser(user.get("email"), user.get("password"));
+        app.jamesCli().addUser(user);
         app.session().loginAsAdmin();
-        app.user().create(user.get("name"), user.get("email"), user.get("password"));
-        var url = app.mail().getUrl(user.get("email"));
+        app.user().create(user);
+        var url = app.mail().getUrl(user.toString());
         app.driver().get(url);
-        app.user().setPassword(user.get("password"));
-        app.http().login(user.get("email"), user.get("password"));
-        app.http().isLoggedIn();
+        app.user().finishCreation(user.toString());
+        app.http().login(user);
+        Assertions.assertTrue(app.http().isLoggedIn());
     }
 }
