@@ -49,11 +49,13 @@ public class UserRegistrationTests extends TestBase {
         // Шаг 3: Создаем пользователя в приложении
         app.user().create(user);
         // Шаг 4: Получаем ссылку для завершения регистрации из почты
-        var url = app.mail().getUrl(user.toString());
+        var email = user.get("email");       // Извлекаем email
+        var url = app.mail().getUrl(email);  // Используем email для получения URL
         // Шаг 5: Открываем ссылку в браузере для завершения регистрации
         app.driver().get(url);
         // Шаг 6: Завершаем процесс создания пользователя
-        app.user().finishCreation(user.toString());
+        var password = user.get("password");  // Извлекаем пароль
+        app.user().finishCreation(password, password); // Передаем оба пароля
         // Шаг 7: Логинимся в приложении с учетными данными нового пользователя
         app.http().login(user);
         // Шаг 8: Проверяем, что пользователь успешно вошел в систему
