@@ -1,4 +1,1 @@
 rootProject.name = 'mantis_tests'
-include 'src:test:untitled'
-findProject(':src:test:untitled')?.name = 'untitled'
-
