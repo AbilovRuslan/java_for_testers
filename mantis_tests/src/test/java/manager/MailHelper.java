@@ -5,6 +5,7 @@ import jakarta.mail.Folder;
 import jakarta.mail.MessagingException;
 import jakarta.mail.Session;
 import model.MailMessage;
+import model.UserData;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -87,7 +88,7 @@ public class MailHelper extends HelperBase {
 
     }
 
-    public String getUrl(String email) {
+    public String getUrl(UserData email) {
         return email;
     }
 

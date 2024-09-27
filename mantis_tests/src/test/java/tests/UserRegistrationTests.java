@@ -1,17 +1,16 @@
 package tests;
 
 import common.CommonFunctions;
+import model.UserData;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
+import java.time.Duration;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static tests.TestBase.app;
 
 
 // создать пользователя (адрес) на почтовом сервере (JamesHelper) - есть!
@@ -23,42 +22,78 @@ import static tests.TestBase.app;
 
 public class UserRegistrationTests extends TestBase {
 
-    // Метод, возвращающий список пользователей с произвольными именами и адресами электронной почты
-    public static List<Map<String, String>> userProvider() {
-        var result = new ArrayList<Map<String, String>>(); // Инициализируем пустой список
-        // Генерируем 3 пользователя
-        for (var i = 0; i < 3; i++) {
-            String name = CommonFunctions.randomString(5); // Генерируем случайное имя из 5 символов
-            Map<String, String> user = new HashMap<>(); // Создаем новую карту для пользователя
-            user.put("name", name); // Добавляем имя
-            user.put("email", String.format("%s@localhost", name)); // Формируем электронный адрес на основе имени
-            user.put("password", "password"); // Фиксированный пароль для пользователей
-            result.add(user); // Добавляем пользователя в список
+    public static List<UserData> userProvider() {
+        var result = new ArrayList<UserData>();
+        for (var i = 0; i < 1; i++) {
+            String name = CommonFunctions.randomString(5);
+            result.add(new UserData()
+                    .withName(name)
+                    .withEmail(String.format("%s@localhost", name))
+                    .withPassword("password"));
         }
-        return result; // Возвращаем список пользователей
+        return result;
     }
 
-    // Определяем параметризованный тест, использующий метод `userProvider`
     @ParameterizedTest
     @MethodSource("userProvider")
-    void canRegisterUser(Map<String, String> user) {
-        // Шаг 1: Добавляем пользователя на почтовом сервере
-        app.jamesCli().addUser(user);
-        // Шаг 2: Логинимся как администратор
+    void canRegisterUser(UserData userData) {
+        app.jamesCli().addUser(userData);
         app.session().loginAsAdmin();
-        // Шаг 3: Создаем пользователя в приложении
-        app.user().create(user);
-        // Шаг 4: Получаем ссылку для завершения регистрации из почты
-        var email = user.get("email");       // Извлекаем email
-        var url = app.mail().getUrl(email);  // Используем email для получения URL
-        // Шаг 5: Открываем ссылку в браузере для завершения регистрации
+        app.user().create(userData);
+        var url = app.mail().getUrl(userData);
         app.driver().get(url);
-        // Шаг 6: Завершаем процесс создания пользователя
-        var password = user.get("password");  // Извлекаем пароль
-        app.user().finishCreation(password, password); // Передаем оба пароля
-        // Шаг 7: Логинимся в приложении с учетными данными нового пользователя
-        app.http().login(user);
-        // Шаг 8: Проверяем, что пользователь успешно вошел в систему
+        app.user().finishCreation(userData);
+        app.http().login(userData);
         Assertions.assertTrue(app.http().isLoggedIn());
     }
+
+    @ParameterizedTest
+    @MethodSource("userProvider")
+    void canRegisterUserByApi(UserData userData) {
+        app.jamesApi().addUser(userData);
+        app.session().loginAsAdmin();
+        app.user().create(userData);
+        var url = app.mail().getUrl(userData);
+        app.driver().get(url);
+        app.user().finishCreation(userData);
+        app.http().login(userData);
+        Assertions.assertTrue(app.http().isLoggedIn());
+    }
+
+    @ParameterizedTest
+    @MethodSource("userProvider")
+    void canRegisterUserByRest(UserData userData) {
+        app.jamesApi().addUser(userData); //регистрирует новый адрес на почтовом сервере James, используя REST API.
+        app.rest().createUser(userData);//регистрацию нового пользователя в Mantis, используя REST API.
+        var url = app.mail().getUrl(userData);
+        app.driver().get(url);
+        app.user().finishCreation(userData);
+        app.http().login(userData);
+        Assertions.assertTrue(app.http().isLoggedIn());
+    }
+
+    UserData userMail;
+    @Test
+    void canRegisterUserDeveloperMail() {
+        userMail = app.developerMail().addUser();
+        var mail = String.format("%s@developermail.com", userMail.name());
+
+        userMail = userMail.withEmail(mail).withPassword("password");
+        app.session().loginAsAdmin();
+        app.user().create(userMail);
+        System.out.println(userMail);
+
+        var message = app.developerMail().receive(userMail, Duration.ofSeconds(100));
+        var url = CommonFunctions.extractUrl(message);
+
+        app.driver().get(url);
+        app.user().finishCreation(userMail);
+        app.http().login(userMail);
+        Assertions.assertTrue(app.http().isLoggedIn());
+    }
+
+  /*  @AfterEach
+    void deleteMailUser(){
+        app.developerMail().deleteUser(userMail);
+    }*/
 }

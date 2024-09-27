@@ -1,4 +1,5 @@
 package manager;
+import model.UserData;
 import okhttp3.*;
 
 
@@ -8,11 +9,12 @@ import java.util.Map;
 
 import static tests.TestBase.app;
 
-public class HttpSessionHelper extends HelperBase {
+public class HttpSessionHelper extends  HelperBase {
+
     OkHttpClient client;
 
-    public HttpSessionHelper(ApplicationManager app) {
-        super(app);
+    public HttpSessionHelper (ApplicationManager manager) {
+        super(manager);
         client = new OkHttpClient.Builder().cookieJar(new JavaNetCookieJar(new CookieManager())).build();
     }
 
@@ -22,31 +24,31 @@ public class HttpSessionHelper extends HelperBase {
                 .add("password", password)
                 .build();
         Request request = new Request.Builder()
-                .url(String.format("%s/login.php", app.prop("web.baseUrl")))
+                .url(String.format("%s/login.php", manager.property("web.baseUrl")))
                 .post(formBody)
                 .build();
 
         try (Response response = client.newCall(request).execute()) {
-            if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
-            //System.out.println(response.body().string());
+            if (!response.isSuccessful()) throw new RuntimeException("Unexpected code " + response);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
+    public void login(UserData user){
+        login(user.name(), user.password());
+    }
+
     public boolean isLoggedIn() {
         Request request = new Request.Builder()
-                .url(app.prop("web.baseUrl"))
+                .url(manager.property("web.baseUrl"))
                 .build();
         try (Response response = client.newCall(request).execute()) {
-            if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+            if (!response.isSuccessful()) throw new RuntimeException("Unexpected code " + response);
             String body = response.body().string();
             return body.contains("<span class=\"user-info\">");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public void login(Map<String, String> user) {
     }
 }

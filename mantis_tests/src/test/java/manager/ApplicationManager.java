@@ -10,57 +10,76 @@ import java.util.Properties;
 public class ApplicationManager {
 
     private WebDriver driver;
-    private String browser;
-    private Properties prop;
-    private SessionHelper session;
-    private HttpSessionHelper http;
-    private JamesCliHelper james;
-    private MailHelper mail;
-    private UserHelper userHelper;
-    private Properties properties;
     private String string;
-    private String password;
+    private Properties properties;
+    private SessionHelper sessionHelper;
+    private HttpSessionHelper httpSessionHelper;
+    private JamesCliHelper jamesCliHelper;
+    private JamesApiHelper jamesApiHelper;
+    private MailHelper mailHelper;
+    private UserHelper userHelper;
+    private DeveloperMailHelper developerMailHelper;
+    private RestApiHelper restApiHelper;
 
+
+    public void init(String browser, Properties properties) {
+        this.string = browser;
+        this.properties = properties;
+    }
 
     public WebDriver driver() {
-        if(driver == null) {
-            if("chrome".equals(browser)) {
-                driver = new ChromeDriver();
-            } else if ("firefox".equals(browser)) {
+        if (driver == null) {
+            if (string.equals("firefox")) {
                 driver = new FirefoxDriver();
-            }else {
-                throw new IllegalArgumentException(String.format("Unrecognized browser: %s", browser));
+            } else if (string.equals("chrome")) {
+                driver = new ChromeDriver();
+            } else {
+                throw new IllegalArgumentException(String.format("Unknown browser %s", string));
             }
             Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
-            driver.get(prop.getProperty("web.baseUrl"));
-            driver.manage().window().setSize(new Dimension(1264, 964));
+            driver.get(properties.getProperty("web.baseUrl"));
+            driver.manage().window().setSize(new Dimension(945, 1000));
         }
         return driver;
     }
 
     public SessionHelper session() {
-        if(session == null) {
-            session = new SessionHelper(this);
+        if (sessionHelper == null) {
+            sessionHelper = new SessionHelper(this);
         }
-        return session;
+        return sessionHelper;
     }
 
     public HttpSessionHelper http() {
-        if(http == null) {
-            http = new HttpSessionHelper(this);
+        if (httpSessionHelper == null) {
+            httpSessionHelper = new HttpSessionHelper(this);
         }
-        return http;
+        return httpSessionHelper;
     }
 
-    public String prop(String key) {
-        return prop.getProperty(key);
+    public String property(String name) {
+        return properties.getProperty(name);
     }
 
     public JamesCliHelper jamesCli() {
-        if(james == null) {
-            james = new JamesCliHelper(this);
+        if (jamesCliHelper == null) {
+            jamesCliHelper = new JamesCliHelper(this);
         }
-        return james;
+        return jamesCliHelper;
+    }
+
+    public JamesApiHelper jamesApi() {
+        if (jamesApiHelper == null) {
+            jamesApiHelper = new JamesApiHelper(this);
+        }
+        return jamesApiHelper;
+    }
+
+    public MailHelper mail() {
+        if (mailHelper == null) {
+            mailHelper = new MailHelper(this);
+        }
+        return mailHelper;
     }
 
     public UserHelper user() {
@@ -70,33 +89,17 @@ public class ApplicationManager {
         return userHelper;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public MailHelper mail() {
-        if(mail == null) {
-            mail = new MailHelper(this);
+    public DeveloperMailHelper developerMail() {
+        if (developerMailHelper == null) {
+            developerMailHelper = new DeveloperMailHelper(this);
         }
-        return mail;
+        return developerMailHelper;
     }
 
-
-
-    public  UserHelper userHelper() {
-        if(userHelper == null) {
-            userHelper = new UserHelper(this);
+    public RestApiHelper rest() {
+        if (restApiHelper == null) {
+            restApiHelper = new RestApiHelper(this);
         }
-        return userHelper;
-    }
-
-    public void init(String browser, Properties properties) {
-        this.string = browser;
-        this.properties = properties;
-    }
-
-
-    public String property(String name) {
-        return properties.getProperty(name);
+        return restApiHelper;
     }
 }

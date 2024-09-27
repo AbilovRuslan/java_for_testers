@@ -1,6 +1,7 @@
 package manager;
 
 
+import model.UserData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,29 +17,27 @@ public class UserHelper extends HelperBase {
         super(manager);
     }
 
-    public void create(String email, String username) {
+    public void create(String mail, String username) {
         openManage();
         accounts();
         click(By.cssSelector(".pull-left .btn-round"));
         type(By.name("username"), username);
         type(By.name("realname"), username);
-        type(By.name("email"), email);
+        type(By.name("email"), mail);
         click(By.cssSelector("[value='Create User']"));
     }
 
-    public void create(String email, String username, String password) {
-        create(email, username);
-        finishCreation(password, password); // передаем password и confirmPassword
+    public void create(UserData user) {
+        create(user.email(), user.name());
     }
-
-
 
     private void accounts() {
         click(By.linkText("Users"));
     }
 
     private void openManage() {
-        if (!isElementDisplayed(By.cssSelector(".fa-gears"))) {
+        if(!isElementDisplayed(By.cssSelector(".fa-gears")))
+        {
             click(By.id("menu-toggler"));
         }
         WebDriverWait wait = new WebDriverWait(manager.driver(), Duration.ofSeconds(10));
@@ -49,13 +48,10 @@ public class UserHelper extends HelperBase {
     public void finishCreation(String password, String confirmPassword) {
         type(By.id("password"), password);
         type(By.id("password-confirm"), confirmPassword);
-        click(By.className("btn-success")); 
+        click(By.className("btn-success"));
     }
 
-    public void create(Map<String, String> user) {
-        String email = user.get("email");
-        String username = user.get("username");
-        String password = user.get("password");
-        create(email, username, password); // используем новый метод create
+    public void finishCreation(UserData user) {
+        finishCreation(user.password(), user.password());
     }
 }
