@@ -92,8 +92,5 @@ public class UserRegistrationTests extends TestBase {
         Assertions.assertTrue(app.http().isLoggedIn());
     }
 
-  /*  @AfterEach
-    void deleteMailUser(){
-        app.developerMail().deleteUser(userMail);
-    }*/
+  
 }
