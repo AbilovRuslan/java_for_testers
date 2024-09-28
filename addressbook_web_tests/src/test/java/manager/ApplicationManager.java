@@ -64,7 +64,6 @@ public class ApplicationManager {
             contacts = new ContactHelper(this);
         }
         return contacts;
-        
     }
 
 
