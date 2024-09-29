@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://192.168.0.104:56077/index.html#suites -->
+<html dir="ltr" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Allure Report</title>
+    <link rel="icon" href="http://192.168.0.104:56077/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./Allure Report main.jpg_files/styles.css">
+    <link rel="stylesheet" type="text/css" href="./Allure Report main.jpg_files/styles(1).css">
+<script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+<body>
+    <div id="alert"></div>
+    <div id="content"><div class="app"><div class="app__nav"><div class="side-nav"><div class="side-nav__head">
+    <a href="http://192.168.0.104:56077/index.html#" class="side-nav__brand" data-ga4-event="home_click">
+        <span class="side-nav__brand-text">Allure</span>
+    </a>
+</div>
+<ul class="side-nav__menu">
+        <li class="side-nav__item" data-tooltip="Overview" data-ga4-event="tab_click" data-ga4-param-tab="">
+            <a href="http://192.168.0.104:56077/index.html#" class="side-nav__link">
+                <span class="side-nav__icon fa fa-home"></span>
+                <div class="side-nav__text">Overview</div>
+            </a>
+        </li>
+        <li class="side-nav__item" data-tooltip="Categories" data-ga4-event="tab_click" data-ga4-param-tab="categories">
+            <a href="http://192.168.0.104:56077/index.html#categories" class="side-nav__link">
+                <span class="side-nav__icon fa fa-flag"></span>
+                <div class="side-nav__text">Categories</div>
+            </a>
+        </li>
+        <li class="side-nav__item" data-tooltip="Suites" data-ga4-event="tab_click" data-ga4-param-tab="suites">
+            <a href="http://192.168.0.104:56077/index.html#suites" class="side-nav__link side-nav__link_active">
+                <span class="side-nav__icon fa fa-briefcase"></span>
+                <div class="side-nav__text">Suites</div>
+            </a>
+        </li>
+        <li class="side-nav__item" data-tooltip="Graphs" data-ga4-event="tab_click" data-ga4-param-tab="graph">
+            <a href="http://192.168.0.104:56077/index.html#graph" class="side-nav__link">
+                <span class="side-nav__icon fa fa-bar-chart"></span>
+                <div class="side-nav__text">Graphs</div>
+            </a>
+        </li>
+        <li class="side-nav__item" data-tooltip="Timeline" data-ga4-event="tab_click" data-ga4-param-tab="timeline">
+            <a href="http://192.168.0.104:56077/index.html#timeline" class="side-nav__link">
+                <span class="side-nav__icon fa fa-clock-o"></span>
+                <div class="side-nav__text">Timeline</div>
+            </a>
+        </li>
+        <li class="side-nav__item" data-tooltip="Behaviors" data-ga4-event="tab_click" data-ga4-param-tab="behaviors">
+            <a href="http://192.168.0.104:56077/index.html#behaviors" class="side-nav__link">
+                <span class="side-nav__icon fa fa-list"></span>
+                <div class="side-nav__text">Behaviors</div>
+            </a>
+        </li>
+        <li class="side-nav__item" data-tooltip="Packages" data-ga4-event="tab_click" data-ga4-param-tab="packages">
+            <a href="http://192.168.0.104:56077/index.html#packages" class="side-nav__link">
+                <span class="side-nav__icon fa fa-align-left"></span>
+                <div class="side-nav__text">Packages</div>
+            </a>
+        </li>
+</ul>
+<div class="side-nav__strut"></div>
+<div class="side-nav__footer">
+    <div class="side-nav__item" data-tooltip="Change language">
+        <button class="button button button_inverse side-nav__language-small side-nav__language-small_lang_en" data-ga4-event="language_menu_click">
+            en
+        </button>
+    </div>
+
+    <div class="side-nav__item " data-tooltip="Expand" data-ga4-event="expand_menu_click">
+        <div class="side-nav__collapse">
+            <span class="side-nav__icon fa fa-angle-left"></span>
+            <span class="side-nav__text">Collapse</span>
+        </div>
+    </div>
+</div>
+</div></div>
+<div class="app__content"><div class="side-by-side"><div class="side-by-side__left" style="width: calc(50% - 3.5px);"><div class="tree"><div class="pane__title pane__title_borderless">
+    <span class="pane__title-text">Suites</span>
+    <div class="pane__search"><div class="search"><div class="search__container">
+    <input class="search__input" type="text">
+</div>
+</div></div>
+    <span class="pane__controls">
+        <span class="fa fa-info-circle tree__control tree__info" data-tooltip="Toggle groups info"></span>
+            <span class="fa fa-download tree__control tree__download" data-tooltip="Download CSV" data-ga4-event="csv_download_click" data-download="data/suites.csv" data-download-type="text/csv"></span>
+    </span>
+</div>
+
+<div class="tree__ctrl">
+    <div class="tree__sorter"><div class="sorter"><div class="sorter">
+    <div class="sorter__item" data-name="sorter.order" data-asc="false" data-ga4-event="sort_click" data-ga4-param-name="sorter.order">
+        <span class="sorter sorter__name">order</span>
+        <span class="fa-stack sorter__icon">
+            <i class="fa fa-sort-asc fa-stack-1x sorter"></i>
+            <i class="fa fa-sort-desc fa-stack-1x sorter"></i>
+        </span>
+    </div>
+    <div class="sorter__item" data-name="sorter.name" data-asc="true" data-ga4-event="sort_click" data-ga4-param-name="sorter.name">
+        <span class="sorter sorter_enabled sorter__name">name</span>
+        <span class="fa-stack sorter__icon">
+            <i class="fa fa-sort-asc fa-stack-1x sorter sorter_enabled"></i>
+            <i class="fa fa-sort-desc fa-stack-1x sorter"></i>
+        </span>
+    </div>
+    <div class="sorter__item" data-name="sorter.duration" data-asc="false" data-ga4-event="sort_click" data-ga4-param-name="sorter.duration">
+        <span class="sorter sorter__name">duration</span>
+        <span class="fa-stack sorter__icon">
+            <i class="fa fa-sort-asc fa-stack-1x sorter"></i>
+            <i class="fa fa-sort-desc fa-stack-1x sorter"></i>
+        </span>
+    </div>
+    <div class="sorter__item" data-name="sorter.status" data-asc="false" data-ga4-event="sort_click" data-ga4-param-name="sorter.status">
+        <span class="sorter sorter__name">status</span>
+        <span class="fa-stack sorter__icon">
+            <i class="fa fa-sort-asc fa-stack-1x sorter"></i>
+            <i class="fa fa-sort-desc fa-stack-1x sorter"></i>
+        </span>
+    </div>
+</div>
+</div></div>
+    <div class="tree__strut"></div>
+    <div class="tree__filter"><div class="status-toggle"><div class="status-toggle__items">
+    Status:
+        <div class="status-toggle__item">
+            <span class="y-label y-label_status_failed" data-status="failed" data-tooltip="Hide test results with Failed status">1</span>
+        </div>
+        <div class="status-toggle__item">
+            <span class="y-label y-label_status_broken" data-status="broken" data-tooltip="Hide test results with Broken status">1</span>
+        </div>
+        <div class="status-toggle__item">
+            <span class="y-label y-label_status_passed" data-status="passed" data-tooltip="Hide test results with Passed status">12</span>
+        </div>
+        <div class="status-toggle__item">
+            <span class="y-label y-label_status_skipped" data-status="skipped" data-tooltip="Hide test results with Skipped status">0</span>
+        </div>
+        <div class="status-toggle__item">
+            <span class="y-label y-label_status_unknown" data-status="unknown" data-tooltip="Hide test results with Unknown status">0</span>
+        </div>
+</div>
+</div></div>
+    <div class="tree__filter-marks"><div class="marks-toggle"><div class="marks-toggle__items">
+    Marks:
+        <div class="marks-toggle__item">
+            <span class="n-label-mark n-label_mark_flaky" data-mark="flaky" data-tooltip="Show Flaky test results"><span class="fa fa-bomb "></span></span>
+        </div>
+        <div class="marks-toggle__item">
+            <span class="n-label-mark n-label_mark_newFailed" data-mark="newFailed" data-tooltip="Show New failed test results"><span class="fa fa-times-circle "></span></span>
+        </div>
+        <div class="marks-toggle__item">
+            <span class="n-label-mark n-label_mark_newPassed" data-mark="newPassed" data-tooltip="Show New passed test results"><span class="fa fa-check-circle "></span></span>
+        </div>
+        <div class="marks-toggle__item">
+            <span class="n-label-mark n-label_mark_newBroken" data-mark="newBroken" data-tooltip="Show New broken test results"><span class="fa fa-exclamation-circle "></span></span>
+        </div>
+        <div class="marks-toggle__item">
+            <span class="n-label-mark n-label_mark_retriesStatusChange" data-mark="retriesStatusChange" data-tooltip="Show Status changed after retry test results"><span class="fa fa-refresh "></span></span>
+        </div>
+</div>
+</div></div>
+</div>
+
+<div class="tree__content"><div class="tree"><div class="tree__content" data-uid="98d3104e051c652961429bf95fa0b5d6">
+    <div class="node">
+        <div class="node__title long-line" data-uid="bf46a3be8fc9d92ade34c332c1d6d11e">
+            <span class="node__arrow block__arrow"><span class="angle fa fa-angle-right fa-fw fa-lg"></span></span>
+                <div class="node__name">
+                    tests.ContactCreationTests
+                </div>
+            <div class="tree__strut">&nbsp;</div>
+            <span class="node__stats">
+                <span class="label label_status_passed">5</span> 
+            </span>
+        </div>
+
+        <div class="node__children">
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/bf46a3be8fc9d92ade34c332c1d6d11e/26cbae61fc9d744f/">
+    <div class="node__title" data-uid="26cbae61fc9d744f" data-parentuid="bf46a3be8fc9d92ade34c332c1d6d11e">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#4</div>
+        <div class="node__name">
+            canAddContactToGroup()
+        </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">28s 835ms</div>
+    </div>
+</a>
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/bf46a3be8fc9d92ade34c332c1d6d11e/415f81fac62da161/">
+    <div class="node__title" data-uid="415f81fac62da161" data-parentuid="bf46a3be8fc9d92ade34c332c1d6d11e">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#5</div>
+        <div class="node__name">
+            canCreateContactInGroup()
+        </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">28s 676ms</div>
+    </div>
+</a>
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/bf46a3be8fc9d92ade34c332c1d6d11e/70360cfc318589d7/">
+    <div class="node__title" data-uid="70360cfc318589d7" data-parentuid="bf46a3be8fc9d92ade34c332c1d6d11e">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#2</div>
+        <div class="node__name">
+            canNotCreateContact(ContactData) [1] ContactData[id=, firstName=FirstName', middleName=, lastName=, nickName=, file=, title=, company=, address=, homeNumber=, mobileNumber=, workNumber=, faxNumber=, allPhones=, email=, email2=, email3=, allEmails=, homePage=, birthDay=, birthMonth=, birthYear=, anniversaryDay=, anniversaryMonth=, anniversaryYear=]
+        </div>
+            <div class="node__parameters long-line line-ellipsis">
+                <span>&nbsp;</span>
+                        ContactData[id=, firstName=FirstName', middleName=, lastName=, nickName=, file=, title=, company=, address=, homeNumber=, mobileNumber=, workNumber=, faxNumber=, allPhones=, email=, email2=, email3=, allEmails=, homePage=, birthDay=, birthMonth=, birthYear=, anniversaryDay=, anniversaryMonth=, anniversaryYear=]<span class="node__parameters_separator">,</span>
+            </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">2m 50s</div>
+    </div>
+</a>
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/bf46a3be8fc9d92ade34c332c1d6d11e/7fde64a42936afbc/">
+    <div class="node__title" data-uid="7fde64a42936afbc" data-parentuid="bf46a3be8fc9d92ade34c332c1d6d11e">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#3</div>
+        <div class="node__name">
+            canNotCreateContact(ContactData) [2] ContactData[id=, firstName=, middleName=, lastName=LastName', nickName=, file=, title=, company=, address=, homeNumber=, mobileNumber=, workNumber=, faxNumber=, allPhones=, email=, email2=, email3=, allEmails=, homePage=, birthDay=, birthMonth=, birthYear=, anniversaryDay=, anniversaryMonth=, anniversaryYear=]
+        </div>
+            <div class="node__parameters long-line line-ellipsis">
+                <span>&nbsp;</span>
+                        ContactData[id=, firstName=, middleName=, lastName=LastName', nickName=, file=, title=, company=, address=, homeNumber=, mobileNumber=, workNumber=, faxNumber=, allPhones=, email=, email2=, email3=, allEmails=, homePage=, birthDay=, birthMonth=, birthYear=, anniversaryDay=, anniversaryMonth=, anniversaryYear=]<span class="node__parameters_separator">,</span>
+            </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">2m 50s</div>
+    </div>
+</a>
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/bf46a3be8fc9d92ade34c332c1d6d11e/518f2f63d280d8dd/">
+    <div class="node__title" data-uid="518f2f63d280d8dd" data-parentuid="bf46a3be8fc9d92ade34c332c1d6d11e">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#1</div>
+        <div class="node__name">
+            canRemoveContactFromGroup()
+        </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">2m 52s</div>
+    </div>
+</a>
+        </div>
+    </div>
+    <div class="node">
+        <div class="node__title long-line" data-uid="c569ec36c8e6d38d219a51ce0f141c44">
+            <span class="node__arrow block__arrow"><span class="angle fa fa-angle-right fa-fw fa-lg"></span></span>
+                <div class="node__name">
+                    tests.ContactInfoTests
+                </div>
+            <div class="tree__strut">&nbsp;</div>
+            <span class="node__stats">
+                <span class="label label_status_failed">1</span> <span class="label label_status_passed">1</span> 
+            </span>
+        </div>
+
+        <div class="node__children">
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/c569ec36c8e6d38d219a51ce0f141c44/bbaa171cb7b30491/">
+    <div class="node__title" data-uid="bbaa171cb7b30491" data-parentuid="c569ec36c8e6d38d219a51ce0f141c44">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#1</div>
+        <div class="node__name">
+            testEmailsAddressPhones()
+        </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">2s 771ms</div>
+    </div>
+</a>
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/c569ec36c8e6d38d219a51ce0f141c44/7851e1132302652b/">
+    <div class="node__title" data-uid="7851e1132302652b" data-parentuid="c569ec36c8e6d38d219a51ce0f141c44">
+        <div class="node__anchor">
+            <span class="fa fa-times-circle fa-fw text_status_failed fa-lg" data-tooltip="Failed"></span>
+        </div>
+        <div class="node__order">#2</div>
+        <div class="node__name">
+            testPhones()
+        </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">290ms</div>
+    </div>
+</a>
+        </div>
+    </div>
+    <div class="node">
+        <div class="node__title long-line" data-uid="d2e3b58de1de9516e8f360290c61bc78">
+            <span class="node__arrow block__arrow"><span class="angle fa fa-angle-right fa-fw fa-lg"></span></span>
+                <div class="node__name">
+                    tests.ContactModificationTests
+                </div>
+            <div class="tree__strut">&nbsp;</div>
+            <span class="node__stats">
+                <span class="label label_status_broken">1</span> 
+            </span>
+        </div>
+
+        <div class="node__children">
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/d2e3b58de1de9516e8f360290c61bc78/1b85f12202ad2e91/">
+    <div class="node__title" data-uid="1b85f12202ad2e91" data-parentuid="d2e3b58de1de9516e8f360290c61bc78">
+        <div class="node__anchor">
+            <span class="fa fa-exclamation-circle fa-fw text_status_broken fa-lg" data-tooltip="Broken"></span>
+        </div>
+        <div class="node__order">#1</div>
+        <div class="node__name">
+            canModifyContact()
+        </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">20s 254ms</div>
+    </div>
+</a>
+        </div>
+    </div>
+    <div class="node">
+        <div class="node__title long-line" data-uid="404443b261cc269d6388863c08a0486f">
+            <span class="node__arrow block__arrow"><span class="angle fa fa-angle-right fa-fw fa-lg"></span></span>
+                <div class="node__name">
+                    tests.ContactRemovalTests
+                </div>
+            <div class="tree__strut">&nbsp;</div>
+            <span class="node__stats">
+                <span class="label label_status_passed">1</span> 
+            </span>
+        </div>
+
+        <div class="node__children">
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/404443b261cc269d6388863c08a0486f/e6b9a4104ac66fa2/">
+    <div class="node__title" data-uid="e6b9a4104ac66fa2" data-parentuid="404443b261cc269d6388863c08a0486f">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#1</div>
+        <div class="node__name">
+            canContactRemoval()
+        </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">26s 953ms</div>
+    </div>
+</a>
+        </div>
+    </div>
+    <div class="node">
+        <div class="node__title long-line" data-uid="b063564a97cbf3102620c38aa4e5da14">
+            <span class="node__arrow block__arrow"><span class="angle fa fa-angle-right fa-fw fa-lg"></span></span>
+                <div class="node__name">
+                    tests.GroupCreationTests
+                </div>
+            <div class="tree__strut">&nbsp;</div>
+            <span class="node__stats">
+                <span class="label label_status_passed">2</span> 
+            </span>
+        </div>
+
+        <div class="node__children">
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/b063564a97cbf3102620c38aa4e5da14/d49a8383ac2f2dc4/">
+    <div class="node__title" data-uid="d49a8383ac2f2dc4" data-parentuid="b063564a97cbf3102620c38aa4e5da14">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#1</div>
+        <div class="node__name">
+            canCreateGroups(GroupData) [1] GroupData[id=, name=utfuvqphbj, header=lbehwuijlhdsxsmxroud, footer=xsboqxazkxbjbijptaigphmxcylchw]
+        </div>
+            <div class="node__parameters long-line line-ellipsis">
+                <span>&nbsp;</span>
+                        GroupData[id=, name=utfuvqphbj, header=lbehwuijlhdsxsmxroud, footer=xsboqxazkxbjbijptaigphmxcylchw]<span class="node__parameters_separator">,</span>
+            </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">7s 377ms</div>
+    </div>
+</a>
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/b063564a97cbf3102620c38aa4e5da14/674c409f470d8385/">
+    <div class="node__title" data-uid="674c409f470d8385" data-parentuid="b063564a97cbf3102620c38aa4e5da14">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#2</div>
+        <div class="node__name">
+            canNotCreateGroup(GroupData) [1] GroupData[id=, name=group name', header=, footer=]
+        </div>
+            <div class="node__parameters long-line line-ellipsis">
+                <span>&nbsp;</span>
+                        GroupData[id=, name=group name', header=, footer=]<span class="node__parameters_separator">,</span>
+            </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">4s 849ms</div>
+    </div>
+</a>
+        </div>
+    </div>
+    <div class="node">
+        <div class="node__title long-line" data-uid="346ae4d6092e8a7dfde7db96fa6250e6">
+            <span class="node__arrow block__arrow"><span class="angle fa fa-angle-right fa-fw fa-lg"></span></span>
+                <div class="node__name">
+                    tests.GroupModificationTests
+                </div>
+            <div class="tree__strut">&nbsp;</div>
+            <span class="node__stats">
+                <span class="label label_status_passed">1</span> 
+            </span>
+        </div>
+
+        <div class="node__children">
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/346ae4d6092e8a7dfde7db96fa6250e6/62fe262d1f5d6241/">
+    <div class="node__title" data-uid="62fe262d1f5d6241" data-parentuid="346ae4d6092e8a7dfde7db96fa6250e6">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#1</div>
+        <div class="node__name">
+            canModifyGroup()
+        </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">5s 718ms</div>
+    </div>
+</a>
+        </div>
+    </div>
+    <div class="node">
+        <div class="node__title long-line" data-uid="2ff6ef8007245d8c61723c87e0534685">
+            <span class="node__arrow block__arrow"><span class="angle fa fa-angle-right fa-fw fa-lg"></span></span>
+                <div class="node__name">
+                    tests.GroupRemovalTests
+                </div>
+            <div class="tree__strut">&nbsp;</div>
+            <span class="node__stats">
+                <span class="label label_status_passed">2</span> 
+            </span>
+        </div>
+
+        <div class="node__children">
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/2ff6ef8007245d8c61723c87e0534685/f9b7daa4783d611a/">
+    <div class="node__title" data-uid="f9b7daa4783d611a" data-parentuid="2ff6ef8007245d8c61723c87e0534685">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#1</div>
+        <div class="node__name">
+            canRemovalAllGroupsAtOnce()
+        </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">1s 765ms</div>
+    </div>
+</a>
+<a class="node node__leaf" href="http://192.168.0.104:56077/index.html#suites/2ff6ef8007245d8c61723c87e0534685/67faa2ebd578fecf/">
+    <div class="node__title" data-uid="67faa2ebd578fecf" data-parentuid="2ff6ef8007245d8c61723c87e0534685">
+        <div class="node__anchor">
+            <span class="fa fa-check-circle fa-fw text_status_passed fa-lg" data-tooltip="Passed"></span>
+        </div>
+        <div class="node__order">#2</div>
+        <div class="node__name">
+            canRemoveGroup()
+        </div>
+        <div class="tree__strut">&nbsp;</div>
+        <div class="node__stats">4s 235ms</div>
+    </div>
+</a>
+        </div>
+    </div>
+</div>
+</div></div>
+</div></div>
+<div class="gutter gutter-horizontal" style="width: 7px;"></div><div class="side-by-side__right" style="width: calc(50% - 3.5px);"><div class="empty-view"><div class="empty-view">
+    <p class="empty-view__message">No item selected</p>
+</div></div></div></div></div>
+</div></div>
+    <div id="popup"></div>
+    <script src="./Allure Report main.jpg_files/app.js"></script>
+    <script src="./Allure Report main.jpg_files/index.js"></script>
+    <script src="./Allure Report main.jpg_files/index(1).js"></script>
+    <script src="./Allure Report main.jpg_files/index(2).js"></script>
+    <script async="" src="./Allure Report main.jpg_files/js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FVWC4GKEYS', {
+          'allureVersion': '2.30.0',
+          'reportUuid': 'ecfc010c-92f7-4d0a-9cd3-b135324a5bcb',
+          'single_file': false
+        });
+    </script>
+
+
+</body></html>
