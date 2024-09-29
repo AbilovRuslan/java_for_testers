@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.Dimension;
+
 
 
 import java.util.Properties;
@@ -27,20 +29,17 @@ public class ApplicationManager {
 
     public void init(String browser, Properties properties) {
         this.properties = properties;
-
-
         if (driver == null) {
-            if ("chrome".equals(browser)) {
-                driver = new ChromeDriver();
-            } else if ("firefox".equals(browser)) {
+            if (browser.equals("firefox")) {
                 driver = new FirefoxDriver();
-            } else if ("safari".equals(browser)) {
-                driver = new SafariDriver();
+            } else if (browser.equals("chrome")) {
+                driver = new ChromeDriver();
             } else {
-                throw new IllegalArgumentException(String.format("Unknown Browser %s", browser));
+                throw new IllegalArgumentException(String.format("Unknown browser %s", browser));
             }
             Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
             driver.get(properties.getProperty("web.baseUrl"));
+            driver.manage().window().setSize(new Dimension(945, 1000));
             session().login(properties.getProperty("web.username"), properties.getProperty("web.password"));
         }
     }
@@ -50,6 +49,13 @@ public class ApplicationManager {
             session = new LoginHelper(this);
         }
         return session;
+    }
+
+    public JdbcHelper jdbc() {
+        if (jdbc == null) {
+            jdbc = new JdbcHelper(this);
+        }
+        return jdbc;
     }
 
     public GroupHelper groups() {
@@ -66,13 +72,6 @@ public class ApplicationManager {
         return contacts;
     }
 
-
-    public JdbcHelper jdbc() {
-        if (jdbc == null) {
-            jdbc = new JdbcHelper(this);
-        }
-        return jdbc;
-    }
     public HibernateHelper hbm() {
         if (hbm == null) {
             hbm = new HibernateHelper(this);
@@ -88,4 +87,5 @@ public class ApplicationManager {
             return false;
         }
     }
+
 }

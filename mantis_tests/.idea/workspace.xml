@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="963d26bd-b18b-4160-b9a8-3c1a44671c88" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/0143fb07-9aab-4470-a29f-21dfab79a165-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/0a94a5cf-5c8a-45c7-8d50-0c2ca965ee04-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/0e6475fe-d003-4bbb-972d-b73fccb72805-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/0eff706c-4bee-4b92-b675-014e790716ad-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/135a2cbd-c3a1-4a46-aa15-abaeb7eb35c0-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/22593347-fc72-4e63-8e00-4bf5cd1fc055-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/2597737a-2eb9-4ca0-aa2b-b43127673e2a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/28bd7532-304d-4b27-835c-89c0c90aa99f-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/2dd9fd7f-67f2-4e5b-826a-c1e3563d3ca3-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/2fd229a5-3dc8-413f-9252-17d24a361a1d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/3491d6aa-c650-4a43-b570-21a6724cb733-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/360a4460-0e4a-42c0-a25d-86f5fccb114f-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/38802632-a7ad-42c4-ab3d-a88ab93c0f5b-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/46ead8d7-6d8c-4ac7-8bd2-c0add9521639-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/490c8791-6900-446d-9831-7821893a2e31-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/501cdecd-0fc4-410f-9d54-94bf7c93f1a2-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/52461313-d23f-47e3-839a-c9a025df62a2-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/53a4dcfe-dcf5-4dd9-80fb-ea0e72843113-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/618ad495-5399-4810-831e-34a4f35dd87d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/6586f7eb-c568-4aea-a10b-8289e026285d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/6b8190cb-32b5-4351-bd66-2852f5294ba0-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/6b82314b-73c9-48c3-bad5-58757ebadc78-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/72d3b520-e5ac-4cd0-8003-727078a81275-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/73d1e695-1539-48e9-9b6d-c4e5e3eeb738-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/750bb7d4-9b43-4857-94c8-6c7f23210dd3-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/79e37664-fca8-491d-a013-ba76eedd696c-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/7f078f03-0536-4a3b-a748-4b37b806b847-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/886153ec-fdb8-424d-b355-f8d6a180afc7-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/96e47a3d-4c5e-4cab-ae24-680438fe96f7-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/9efd0cec-a3ad-40af-b8b5-b989cc45198e-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/9f06378f-bfab-4908-8dc4-a7881a7c695a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/a0aee5d6-3012-4803-88d9-cf1bfe9eccdf-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/a1d3c94a-a939-47fe-b86d-8872993d244b-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/a26c64d0-e56b-4a02-b2a0-c73ef9e49a10-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/a9a30ca0-cf67-4943-a0fe-5de7579c06cd-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/aa30638d-0ea4-4fa5-91f0-484e5c2713d1-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/b08a1ef6-a114-486d-ae83-3916d1dec288-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/b0b1b451-f916-4e89-a25a-36d215fa6049-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/bb5488ea-9b36-4f01-8d3e-871cece6610f-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/bd274500-a4b7-4664-a707-66f92bf8ed66-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/d1d25d2c-4a26-4656-bf36-86796fd49261-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/d3705d6a-c794-45c1-8926-71ff968c4727-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/d98570ae-2501-4bd7-847d-20fad71db170-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/dac59e20-ceba-45b2-b2e1-803e22459bf2-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/dbea0c3a-f39e-452b-8665-5f493c42dd95-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/ddc32ffd-e576-46a1-9e6b-31313d05db2c-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/e678b0b9-f009-40a0-ac63-8e46936e5441-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/e67ffb1d-8854-4df5-b91b-61de1dd464b0-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/e769d9f4-886b-4a90-9ad5-4997eb3412ca-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/e966ee39-8c1d-4249-836c-4e397b8ad435-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/eaef5f52-a5d2-4e16-8445-95ebf749075e-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/ec5cd329-6b6a-4226-80bc-cbe0fc7166e6-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/edb2f110-3d13-4b2d-a0fb-b4fb2a034543-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/eee60a38-8a9e-4dba-be2d-0948e0bd9824-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/f4a5f1c7-9075-41f0-b309-de4820d71251-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/f84712d6-16f2-4e21-bcb6-2cf5ecfd5a3a-result.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/f9e03c65-64e6-40e7-99a9-b01f8f08f8ea-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/fac12b10-9aaf-4121-b9f7-f1e5b198d31c-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/fba447d0-2da2-4877-ab52-0d3a9870fbfd-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../addressbook_web_tests/allure-results/fced309f-6938-49ca-82a7-9833e1168d6c-result.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook_web_tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook_web_tests/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook_web_tests/src/test/java/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook_web_tests/src/test/java/manager/ApplicationManager.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2mhffMcxg4aevMJpyR0Fh3ruDTX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ruslan/Desktop/Homework/java_for_testers/mantis_tests",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="963d26bd-b18b-4160-b9a8-3c1a44671c88" name="Changes" comment="" />
+      <created>1727533832206</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727533832206</updated>
+    </task>
+    <servers />
+  </component>
+</project>
